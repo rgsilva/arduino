@@ -1,0 +1,13 @@
+This is the first program (not actually the first, but the first I liked) I made for my Arduino.
+When you press a button the ledPower increases. Then, when you release it, the LED will fade out.
+There are two mistakes in this project: the first one is that you just can't abort the fading:
+it's a for loop, controlled only by ledPower variable. The second one will happen if you press
+the button for too much time: the LED will go to a logic zero and then increase again. I guess
+it's kind of an overflow on voltage controller, but I really don't know. To avoid it, just set
+a maximum ledPower, like 255.
+
+Useful references:
+- http://arduino.cc/en/Tutorial/Button
+- http://arduino.cc/en/Tutorial/Fading
+
+- Ricardo
