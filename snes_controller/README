@@ -1,0 +1,29 @@
+I've tried to make my classic SNES controller (original) to work with Arduino, but the way I
+tried didn't work at all. I tried to use SNESpad (http://code.google.com/p/nespad/), but the
+library always returned 1111111111111111 for me. So I decided to make my own program to
+read data from the controller.
+
+After some research, I found a code that can read data from a NES controller:
+http://little-scale.blogspot.com/2007/07/nes-controller-to-arduino.html
+
+I tried to use it with my SNES and it worked, but didn't read all buttons (of course, since
+NES controllers has less buttons than SNES). So I started modifying the program to read not
+only 7 bits, but 16 bits.
+
+Before continue, I suggest the reader to check how SNES communication protocol works first:
+http://www.gamefaqs.com/snes/916396-snes/faqs/5395
+
+Here's how I connected the pins:
+
+  SNES  |  Arduino
+--------------------
+GND     |  GND
++5V     |  +5v out
+CLOCK   |  Digital 3 (PWM)
+STROBE  |  Digital 2
+DATA    |  Digital 4
+
+One thing that might be useful with this is creating a SNES→USB HID adapter, but I think the
+Arduino is an overkill for this job. Raphaël Assénat did a great job with an ATmega8 supporting
+not only SNES, but also NES and other controllers. You can check his project here: 
+http://www.raphnet.net/electronique/snes_nes_usb/index_en.php
