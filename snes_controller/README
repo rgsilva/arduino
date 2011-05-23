@@ -27,3 +27,6 @@ One thing that might be useful with this is creating a SNES→USB HID adapter, b
 Arduino is an overkill for this job. Raphaël Assénat did a great job with an ATmega8 supporting
 not only SNES, but also NES and other controllers. You can check his project here: 
 http://www.raphnet.net/electronique/snes_nes_usb/index_en.php
+
+I also created a small program (xkeys.c) that converts the Arduino serial output to keys pressed
+using the X API. Link with X11 and Xtst (-lX11 -lXtst).

@@ -83,7 +83,7 @@ void loop() {
  
   // Print user-friendly information
   if (ControllerData != 0) {
-	Serial.print("Pressed buttons:");
+	Serial.print("Pressed:");
 	if (ControllerData & SNES_B) {
 	  Serial.print(" B");
 	}
